@@ -4,9 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 async function getData() {
-  const res = await fetch("https://bytebuzz.vercel.app/api/posts", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "https://bytebuzz-hkwabnu1f-reqima-dev.vercel.app/api/posts",
+    {
+      cache: "no-store",
+    }
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
