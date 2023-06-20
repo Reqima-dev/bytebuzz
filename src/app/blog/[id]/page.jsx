@@ -3,9 +3,8 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-
 async function getData(id) {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+  const res = await fetch(`https://bytebuzz.vercel.app/api/posts/${id}`, {
     cache: "no-store",
   });
 
@@ -21,7 +20,7 @@ export async function generateMetadata({ params }) {
   return {
     title: post.title,
     description: post.desc,
-  }
+  };
 }
 const BlogPost = async ({ params }) => {
   const data = await getData(params.id);
